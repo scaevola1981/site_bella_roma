@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ro"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bella Roma | Artisanal Pizza</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Manrope:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#e9c349",
+                    "surface-container-highest": "#373432",
+                    "on-tertiary-fixed-variant": "#484743",
+                    "primary": "#f2ca50",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "secondary-fixed-dim": "#cec5c1",
+                    "surface-container-low": "#1d1b19",
+                    "on-error": "#690005",
+                    "secondary-container": "#4e4845",
+                    "on-tertiary-container": "#464541",
+                    "on-surface-variant": "#d0c5af",
+                    "inverse-primary": "#735c00",
+                    "on-background": "#e8e1dd",
+                    "primary-container": "#d4af37",
+                    "surface-container": "#221f1d",
+                    "primary-fixed-dim": "#e9c349",
+                    "tertiary": "#d1cdc9",
+                    "on-tertiary": "#31302d",
+                    "surface": "#151311",
+                    "inverse-on-surface": "#33302d",
+                    "surface-variant": "#373432",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary-container": "#554300",
+                    "on-primary-fixed": "#241a00",
+                    "background": "#151311",
+                    "on-secondary-fixed": "#1f1b19",
+                    "on-secondary-fixed-variant": "#4b4643",
+                    "surface-dim": "#151311",
+                    "outline": "#99907c",
+                    "on-secondary": "#342f2d",
+                    "inverse-surface": "#e8e1dd",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#cec5c1",
+                    "on-primary": "#3c2f00",
+                    "surface-container-lowest": "#100e0c",
+                    "tertiary-container": "#b5b2ae",
+                    "surface-container-high": "#2c2927",
+                    "secondary-fixed": "#eae1dd",
+                    "on-surface": "#e8e1dd",
+                    "on-secondary-container": "#bfb7b3",
+                    "error-container": "#93000a",
+                    "outline-variant": "#4d4635",
+                    "tertiary-fixed-dim": "#c9c6c1",
+                    "primary-fixed": "#ffe088",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#3c3936",
+                    "tertiary-fixed": "#e6e2dd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "label-caps": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(21, 19, 17, 0.8);
+        }
+        .dotted-leader::after {
+            content: "";
+            flex-grow: 1;
+            border-bottom: 1px dotted #99907c;
+            margin: 0 12px 6px 12px;
+            opacity: 0.3;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(21, 19, 17, 0.4) 0%, rgba(21, 19, 17, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm h-20 transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high border border-outline-variant/50 overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A vintage-inspired artisanal Italian pizza logo featuring a stylized Colosseum and wheat stalks. The design uses a sophisticated palette of deep gold and charcoal black on a textured paper background, embodying timeless craftsmanship and culinary excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFxZ0UittL2XOgMmH6rssjsxmIe98RrKKIhAnkXevlqGOY9uEz_k4gsksLwC0Lzq7JjllpANjl8XWEMAtP2pQNzHGAy3YXZQkqzHLdwVyBI67SkJY7ZrFEaSBlUf3Gi15pn-qfEG2VoSvuEUIgtqYhPU6GhKVRTWKmTTrhxCicM9kAlm0o6RpCwwlUNi0Vo1EyNO5Cyd2BQfqiHFoVoTou9P0emzeitgA98G7iJvfU1le3mucQANY"/>
+</div>
+<span class="font-display-lg text-headline-md-mobile md:text-headline-md tracking-tight text-primary">Bella Roma</span>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-primary font-bold hover:text-primary transition-colors tracking-widest uppercase" href="#">Acasă</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Meniu</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Povestea Noastră</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary active:scale-95 duration-200" onclick="toggleMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<button class="hidden md:flex bg-primary text-on-primary px-8 py-3 rounded-none font-label-caps text-label-caps uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/10">
+                    Comandă Acum
+                </button>
+</div>
+</div>
+</header>
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-[60] pointer-events-none opacity-0 transition-opacity duration-300" id="mobile-drawer">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleMenu()"></div>
+<aside class="absolute top-0 right-0 h-full w-80 bg-surface-container-low flex flex-col p-8 gap-8 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out border-l border-outline-variant/20">
+<div class="flex justify-between items-center mb-4">
+<span class="font-display-lg text-headline-md text-primary">Bella Roma</span>
+<button class="text-on-surface-variant" onclick="toggleMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="flex items-center gap-4 p-4 bg-primary-container text-on-primary-container rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Acasă</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:bg-surface-variant rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Meniu</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:bg-surface-variant rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Povestea Noastră</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:bg-surface-variant rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Contact</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary px-8 py-4 rounded-none font-label-caps text-label-caps uppercase tracking-widest">
+                    Comandă Online
+                </button>
+</div>
+</aside>
+</div>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Hero Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<img class="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]" data-alt="A cinematic, low-angle close-up of an artisanal pizza being pulled from a traditional wood-fired stone oven. The bubbling mozzarella cheese is golden brown, fresh basil leaves are slightly charred, and the thin, leopard-spotted crust is perfectly crisp. Embers and soft smoke drift in the warm, moody lighting of a rustic Italian kitchen. The overall aesthetic is dark, premium, and tactile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8SMQaapZ1ubjjQEX1JOcfntwuSQjKt11hTu8bneqYSyzGsWg6-BIuPNq_4s4wgXDbCuegvUAXv0KG5MoFELZTLEIgRxYcHWk1iNns0QHLf36yp7S2D2EZRO2iTVswSBhDN6SgynsvqYHWiP6IfcUB_LVotJa1mxoEy3t_Y0PfReE7daYYeC0PdA5_jQhKN4qfI526eeKMf8mchIcGYKm-MQYaoUM7zVgYPA4Hn5V-x-243IUvUZY"/>
+</div>
+<div class="relative z-20 text-center px-margin-mobile max-w-4xl mx-auto">
+<div class="mb-8 inline-block opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_forwards]">
+<span class="material-symbols-outlined text-primary text-5xl opacity-80" style="font-variation-settings: 'FILL' 1;">local_pizza</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
+                Bella Roma Artisanal Pizza
+            </h1>
+<p class="font-body-lg text-on-surface-variant md:text-2xl mb-12 max-w-2xl mx-auto font-light tracking-wide opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_0.4s_forwards]">
+                Măiestrie italiană la fiecare felie. O experiență culinară definită de tradiție, ingrediente premium și pasiunea pentru arta focului.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]">
+<button class="group relative px-12 py-5 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(242,202,80,0.3)] active:scale-95">
+<span class="relative z-10">Vezi Povestea</span>
+<div class="absolute inset-0 translate-y-full group-hover:translate-y-0 bg-[#d4af37] transition-transform duration-300"></div>
+</button>
+<button class="px-12 py-5 border border-primary/40 text-on-surface font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-primary/10 transition-all active:scale-95 backdrop-blur-sm">
+                    Meniul Nostru
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer">
+<span class="material-symbols-outlined text-primary/50 text-4xl">expand_more</span>
+</div>
+</section>
+<!-- Bento Highlights Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface-container-low p-10 flex flex-col justify-end min-h-[400px] border border-outline-variant/10 group overflow-hidden relative">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-700" data-alt="A high-contrast macro photograph of raw artisanal ingredients for pizza: a dusting of refined ‘00’ flour on a dark marble surface, vibrant red San Marzano tomatoes, and a ball of fresh buffalo mozzarella. The lighting is dramatic and moody, emphasizing the textures of the ingredients. Corporate modern aesthetic with deep brown and gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhMn5KI5l-2u9dmNnaOQaNKsNt1C3q4Q1K1kixqvhDzIrR4BNghxu1Ond7oP0fhgB-EqKoy9LpkWBq_eHMnWBEXIPuFdE56NV7f8mvj1eTD6w8yi8_gaqGvK1EhDxDKk1Hn1czscer7poiqmAhGNQ4MBsMhsiL2Tz_WSsKtOCvUkrkquSjRVIYY1w8NbLDbZOlctGVelwy_r0k-mLUE-heTESfNndVXo6cyEMfn9U1LWQLu8NU3hI"/>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">Ingrediente Premium</span>
+<h2 class="font-display-lg text-headline-md md:text-headline-lg mb-4">Secretul Calității</h2>
+<p class="text-on-surface-variant max-w-lg">Importăm săptămânal cele mai bune brânzeturi și mezeluri direct din inima Italiei pentru a-ți oferi un gust autentic.</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container p-10 flex flex-col border border-outline-variant/10 hover:border-primary/30 transition-colors">
+<div class="mb-auto">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">local_fire_department</span>
+<h3 class="font-display-lg text-headline-md mb-4">Cuptor cu Lemne</h3>
+<p class="text-on-surface-variant">Temperatura de 450°C asigură acea textură crocantă la exterior și aerată în interior, specifică pizzei napoletane.</p>
+</div>
+<a class="mt-8 font-label-caps text-label-caps text-primary uppercase tracking-widest inline-flex items-center gap-2 group" href="#">
+                    Descoperă Tehnica <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Artisanal Process Section -->
+<section class="bg-surface-container-lowest py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.3em] mb-6 block">Arta Aluatului</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-8">Dospire Lenta de 48 de Ore</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto"></div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Step 1 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center mx-auto mb-8 border border-outline-variant/20 group-hover:border-primary/50 transition-all duration-500">
+<span class="text-2xl font-display-lg text-primary">01</span>
+</div>
+<h4 class="font-display-lg text-headline-md mb-4">Selecția Grâului</h4>
+<p class="text-on-surface-variant leading-relaxed">Folosim exclusiv făină tip 00, recunoscută internațional pentru elasticitatea și finețea sa superioară.</p>
+</div>
+<!-- Step 2 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center mx-auto mb-8 border border-outline-variant/20 group-hover:border-primary/50 transition-all duration-500">
+<span class="text-2xl font-display-lg text-primary">02</span>
+</div>
+<h4 class="font-display-lg text-headline-md mb-4">Timpul Sacru</h4>
+<p class="text-on-surface-variant leading-relaxed">Aluatul nostru se odihnește 48 de ore, permițând dezvoltarea complexă a aromelor și o digestibilitate crescută.</p>
+</div>
+<!-- Step 3 -->
+<div class="text-center group">
+<div class="w-20 h-20 bg-surface-container rounded-full flex items-center justify-center mx-auto mb-8 border border-outline-variant/20 group-hover:border-primary/50 transition-all duration-500">
+<span class="text-2xl font-display-lg text-primary">03</span>
+</div>
+<h4 class="font-display-lg text-headline-md mb-4">Modelarea Manuală</h4>
+<p class="text-on-surface-variant leading-relaxed">Fiecare pizza este întinsă manual de către pizzaiolo, păstrând aerul în crustă pentru margini pufoase.</p>
+</div>
+</div>
+</section>
+<!-- Menu Preview Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">Selecție Curată</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg">Favoritele Casei</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 pb-2 border-b border-outline-variant/30" href="#">
+                VEZI TOT MENIUL <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
+<!-- Menu Item -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end dotted-leader">
+<h4 class="font-display-lg text-2xl text-on-surface">Margherita D.O.P.</h4>
+<span class="font-label-caps text-primary text-lg">42 RON</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">San Marzano, Mozzarella di Bufala, Busuioc proaspăt, Ulei măsline extra virgin.</p>
+</div>
+<!-- Menu Item -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end dotted-leader">
+<h4 class="font-display-lg text-2xl text-on-surface">Diavola Calabrese</h4>
+<span class="font-label-caps text-primary text-lg">48 RON</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">Salami picante, Nduja, Mozzarella fior di latte, Ardei iute, Miere picantă.</p>
+</div>
+<!-- Menu Item -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end dotted-leader">
+<h4 class="font-display-lg text-2xl text-on-surface">Quattro Formaggi Nobile</h4>
+<span class="font-label-caps text-primary text-lg">52 RON</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">Gorgonzola Dolce, Pecorino Romano, Taleggio, Mozzarella, Nuci caramelizate.</p>
+</div>
+<!-- Menu Item -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end dotted-leader">
+<h4 class="font-display-lg text-2xl text-on-surface">Tartufo Bianco</h4>
+<span class="font-label-caps text-primary text-lg">65 RON</span>
+</div>
+<p class="text-on-surface-variant text-sm italic">Pastă de trufe albe, Ciuperci de pădure, Mozzarella, Prosciutto Cotto.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col gap-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<h3 class="font-display-lg text-headline-md text-primary mb-6">Bella Roma</h3>
+<p class="text-on-surface-variant max-w-sm mb-8 leading-relaxed">
+                        Arta pizzei artizanale, adusă direct din cuptoarele Romei în inima orașului tău. Tradiție, pasiune și respect pentru gust.
+                    </p>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-6">Link-uri Utile</h4>
+<nav class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">Comandă Online</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">Povestea Noastră</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">Termeni și Condiții</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">Politica de Confidențialitate</a>
+</nav>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-6">Contact</h4>
+<address class="not-italic text-on-surface-variant flex flex-col gap-4">
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">location_on</span> Strada Romană nr. 12, București</p>
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">call</span> +40 722 000 000</p>
+<p class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">schedule</span> Zilnic: 12:00 - 23:00</p>
+</address>
+</div>
+</div>
+<div class="pt-12 border-t border-outline-variant/10 text-center">
+<p class="font-body-md text-on-surface-variant text-sm opacity-60">© 2024 Bella Roma Artisanal Pizza. Toate drepturile rezervate.</p>
+</div>
+</div>
+</footer>
+<script>
+        function toggleMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            const aside = drawer.querySelector('aside');
+            const isOpen = !drawer.classList.contains('opacity-0');
+
+            if (isOpen) {
+                aside.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('opacity-0', 'pointer-events-none');
+                }, 150);
+            } else {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    aside.classList.remove('translate-x-full');
+                }, 50);
+            }
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                header.classList.add('glass-nav', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('glass-nav', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body></html>

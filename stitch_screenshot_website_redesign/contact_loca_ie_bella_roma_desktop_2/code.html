@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ro"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact & Locație - Bella Roma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&family=Playfair+Display:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-fixed": "#241a00",
+                  "inverse-on-surface": "#33302d",
+                  "surface-container-high": "#2c2927",
+                  "surface-container": "#221f1d",
+                  "error-container": "#93000a",
+                  "tertiary-container": "#b5b2ae",
+                  "surface-container-low": "#1d1b19",
+                  "error": "#ffb4ab",
+                  "on-secondary": "#342f2d",
+                  "primary-fixed-dim": "#e9c349",
+                  "secondary": "#cec5c1",
+                  "tertiary-fixed": "#e6e2dd",
+                  "on-surface-variant": "#d0c5af",
+                  "inverse-surface": "#e8e1dd",
+                  "outline-variant": "#4d4635",
+                  "secondary-container": "#4e4845",
+                  "primary-fixed": "#ffe088",
+                  "outline": "#99907c",
+                  "on-error-container": "#ffdad6",
+                  "secondary-fixed": "#eae1dd",
+                  "background": "#151311",
+                  "surface-tint": "#e9c349",
+                  "surface-dim": "#151311",
+                  "on-tertiary-fixed": "#1c1c19",
+                  "on-secondary-fixed-variant": "#4b4643",
+                  "surface-bright": "#3c3936",
+                  "surface-container-highest": "#373432",
+                  "surface-container-lowest": "#100e0c",
+                  "on-error": "#690005",
+                  "on-background": "#e8e1dd",
+                  "surface-variant": "#373432",
+                  "on-secondary-container": "#bfb7b3",
+                  "on-primary-container": "#554300",
+                  "surface": "#151311",
+                  "tertiary-fixed-dim": "#c9c6c1",
+                  "on-secondary-fixed": "#1f1b19",
+                  "primary": "#f2ca50",
+                  "on-tertiary": "#31302d",
+                  "on-surface": "#e8e1dd",
+                  "secondary-fixed-dim": "#cec5c1",
+                  "on-primary-fixed-variant": "#574500",
+                  "on-tertiary-fixed-variant": "#484743",
+                  "tertiary": "#d1cdc9",
+                  "on-tertiary-container": "#464541",
+                  "on-primary": "#3c2f00",
+                  "primary-container": "#d4af37",
+                  "inverse-primary": "#735c00"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "margin-mobile": "20px",
+                  "margin-desktop": "80px",
+                  "gutter": "24px",
+                  "container-max": "1280px",
+                  "section-gap": "120px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Playfair Display"],
+                  "display-lg": ["Playfair Display"],
+                  "headline-lg": ["Playfair Display"],
+                  "body-lg": ["Manrope"],
+                  "label-caps": ["Manrope"],
+                  "headline-lg-mobile": ["Playfair Display"],
+                  "body-md": ["Manrope"]
+          },
+          "fontSize": {
+                  "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    .dotted-leader {
+      display: flex;
+      align-items: baseline;
+    }
+    .dotted-leader::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px dotted #99907c;
+      margin: 0 10px;
+    }
+
+    .uber-shadow {
+      box-shadow: 0 20px 40px -10px rgba(242, 202, 80, 0.08);
+    }
+
+    .glass-effect {
+      background: rgba(34, 31, 29, 0.8);
+      backdrop-filter: blur(12px);
+    }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #151311; }
+    ::-webkit-scrollbar-thumb { background: #4d4635; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #f2ca50; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md">
+<nav class="flex justify-between items-center px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Bella Roma</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-on-background hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-background hover:text-primary transition-colors duration-300" href="#">Our Story</a>
+<a class="font-label-caps text-label-caps text-on-background hover:text-primary transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block font-label-caps text-label-caps text-primary border border-primary px-6 py-3 hover:bg-primary/10 transition-all duration-300">Order Online</button>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary px-6 py-3 hover:scale-95 transition-all duration-200">Book a Table</button>
+</div>
+</nav>
+</header>
+<main class="pt-32">
+<!-- Hero Section with Image Context -->
+<section class="relative h-[60vh] min-h-[500px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhZDbC_nnZNjNibb62KlEut7onIuKDisHnR0D45bSDfaCRTmYry8Q22R99dP7WrRBa1GHK4p9tS7EG7oN9kOqCe1DnhskrL9BfxS7aMXZCa2qGn7bCxCFcYDwvmMQS2zuHg6Rw7_0CbtIS6nAsS4iBVqkjeT147sNo-lDJshTRsR4QpiTNtvO4RmR5OHqSOg22l6AkfmDcnE3NhKA3NZLZew7fwrpCsYy5K_VyUUPIPIN6Z3t6N9BTMT6QPEM4ITr1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<div class="relative z-10 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">AUTHENTIC EXPERIENCE</span>
+<h1 class="font-display-lg text-display-lg text-on-background mb-8">Contact & Locație</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Vă invităm să descoperiți atmosfera noastră caldă și aromele autentice ale Italiei, chiar în inima județului Vâlcea. O experiență culinară desăvârșită vă așteaptă.
+          </p>
+</div>
+</div>
+</section>
+<!-- Content Grid Section -->
+<section class="px-margin-desktop w-full max-w-container-max mx-auto py-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Contact Information -->
+<div class="lg:col-span-5 space-y-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-12">Găsește-ne</h2>
+<div class="space-y-10">
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-2">ADRESĂ</h4>
+<p class="font-body-lg text-body-lg text-on-background">Strada Principala 6, Drăgioiu,<br/>Râmnicu Vâlcea, 247443</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-2xl">schedule</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-2">PROGRAM</h4>
+<p class="font-body-lg text-body-lg text-on-background">Luni - Duminică: 12:00 - 23:00</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-14 h-14 bg-surface-container-high rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-2">EMAIL</h4>
+<p class="font-body-lg text-body-lg text-on-background underline decoration-primary/30 underline-offset-4">contact@bellaromapub.ro</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="flex-1 min-w-[200px] flex items-center justify-center gap-3 font-label-caps text-label-caps bg-primary text-on-primary px-8 py-5 hover:scale-[0.98] transition-transform duration-200 shadow-lg shadow-primary/10" href="tel:+40000000000">
+<span class="material-symbols-outlined">call</span>
+              Sună Acum
+            </a>
+<a class="flex-1 min-w-[200px] flex items-center justify-center gap-3 font-label-caps text-label-caps border border-primary text-on-background px-8 py-5 hover:bg-primary/10 transition-colors duration-300" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined">directions</span>
+              Direcții Google Maps
+            </a>
+</div>
+</div>
+<!-- Right: Map Integration -->
+<div class="lg:col-span-7 h-[600px] rounded-xl overflow-hidden bg-surface-container-high relative border border-outline-variant shadow-2xl">
+<!-- Placeholder for real Map -->
+<div class="absolute inset-0 bg-surface-container grayscale opacity-80 pointer-events-none">
+<div class="w-full h-full bg-cover bg-center" data-alt="A detailed map visualization of Râmnicu Vâlcea, Romania, featuring a dark mode aesthetic with deep umber and gold accents. The map shows street details with glowing primary gold markers for locations, reflecting a premium and high-end artisanal brand style. Soft ambient shadows define the terrain, maintaining the corporate modern feel of the restaurant's visual identity." data-location="Râmnicu Vâlcea, Romania" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNXPr6992v-Zo728eqwQ2xAyyLbnG7ROWMf2TbkbmwqiogU1mk8OfiMNxc9BeYO8-zfZcOy8E5b2i9puYn-P9GEafGshpEI8Vrd4_lfTqsVYTOOH1uT-9peUamyI_Z1JE9U4uWlDW0SwVl8GKB_1FHkb1_E4zmOoGKvMifvcgk8n6saPtNqaiWXgkzSs7ur4lA12zM6Drw1p_XxAxpG0O1Pm7V68iZ5SSSQ0aonbUJN2W4Zc0f_gI')"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface-container-high/95 p-8 rounded-xl border border-primary/20 text-center max-w-xs backdrop-blur-md uber-shadow">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Bella Roma</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Suntem aici pentru a vă oferi cea mai bună pizza artizanală.</p>
+<button class="mt-6 font-label-caps text-label-caps text-primary hover:underline">INTERACTEAZĂ CU HARTA</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interior Gallery Bento Grid -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">AMBIANȚĂ</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Artizanal în fiecare detaliu</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm mb-1">
+            Interiorul nostru combină texturile brute cu accente rafinate pentru a crea un spațiu de relaxare autentic.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px]">
+<div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden group relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlBpp5yWR0qKtmaacjndXUIjEpy7dOQ7X4ca6NHEwqk_jFfh58LXRG1qTgDCokVXAEIPinhz-hA2cHUt71IBr_0GuyCgtqXXLlHeBvLXU9ReoisKRcvj8O3vPBq3rRCnsnx4hpB07tQVAuB7vmD0X-aAVFK4uui_ihyvtfGnWAUeZnmnrw5i0RpTh4uGdlY2_FjtKioErIE4NIZcAh8OQ2OyKTvaqJpI2bAFeqZ-7JgFGqahIf91Y8qvhiTpMtZKAU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex items-end">
+<span class="font-label-caps text-label-caps text-white">ZONA PRINCIPALĂ DE SERVIRE</span>
+</div>
+</div>
+<div class="md:col-span-2 rounded-xl overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up of an artisanal pizza oven in a dark, moody Italian restaurant kitchen. Glowing amber flames illuminate hand-crafted bricks, reflecting the timeless craftsmanship and slow-food philosophy of Bella Roma. The lighting is high-contrast and dramatic, emphasizing the tactile textures of the wood and flour. Soft gold highlights shimmer on stainless steel surfaces, creating a sense of luxury and authenticity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7X3zswi5tQ9OhshqtKLO_wxmxByjuFa8-qyRwwjoGEFjn4soNz6zBzaJ_faSeGb8G1fXkoXiP0PsiRnODISO7MqsYcQQ0iJY1ctr-6PT9uKZuWmavFFCncldi3pnogsRgcvXLb364-vzhsegDwzptIOzXkmsmToXcWLt-89fRwuLfj_yvqvoLWHucyxSObcREDQXTgZJ_PKzUC_m6oQhxQahRb5UtdS0Yl0dRqkEw9R_eEQ4Gakc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex items-end">
+<span class="font-label-caps text-label-caps text-white">CUPTORUL CU LEMNE</span>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="The sophisticated bar area of a premium Italian restaurant at night. Shelves of high-end spirits and artisanal wines are backlit with a warm, golden glow, creating a deep amber and rich black color palette. The counter is made of dark, polished stone, and the mood is quiet luxury, perfect for an evening drink. Every detail reflects the Corporate Modern style with tactile influences and historical depth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClfvbGNplhO5WCDDOBWYDTQOiggyhAtIitkrtzp9dKaI1OOrYOh8RqPlfoudYRi7K0k8NJ7MaTXvrW5Yj0N1Sx_koqh6cspMXkZ4EeqlcdwG_0ovKh2aTb4l4J9gNThechy0iE4nCgWHqYXqLQza1hiDoa37OIEs_TERNjm_fUnXWF-JNfl3kuo9EmUZQGUbfJUkWXrdwTU8gR5uGz-jxLRaK6He3b74vEy7cNCeVrrTWC3yc24ZU')"></div>
+</div>
+<div class="rounded-xl overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A set table at Bella Roma featuring high-quality linen, elegant glassware, and artisanal cutlery. The lighting is soft and focused, highlighting the premium culinary experience. The background shows a hint of the Dark Umber walls and subtle textures, reinforcing the brand's commitment to excellence and authentic Italian passion in every small detail." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5wE4CtbS1Fg5RuGxnw--c3Vl_1FaU40wUuw64LiHCG-EsLUJ4W5_PqQ3mFDM6t9dBP4Wos2oUE3SPya7hGQGQuFk6G9_V2i8D2pjR92DufTLvagoOLEu_oLwQ-mo6F-DYCRB-JXfdlEFJil2oQHYWjOhd8VOvce8YjxkyqLJvxeYjWGkci5ker_Nsd_8nZvzjXIBiINFEIUqDzszpAaXJI9azD8F-acxHG55aN6RQm0nsYjO0EoE')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Connect -->
+<section class="py-section-gap px-margin-desktop w-full max-w-container-max mx-auto text-center">
+<div class="max-w-2xl mx-auto">
+<h3 class="font-headline-md text-headline-md mb-6">Urmărește Povestea Noastră</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+          Rămâi la curent cu noile noastre preparate și evenimente speciale pe rețelele de socializare.
+        </p>
+<div class="flex justify-center gap-8">
+<a class="flex flex-col items-center gap-3 group" href="#">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-all">
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</div>
+<span class="font-label-caps text-label-caps group-hover:text-primary transition-colors">Instagram</span>
+</a>
+<a class="flex flex-col items-center gap-3 group" href="#">
+<div class="w-16 h-16 rounded-full border border-outline flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-all">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<span class="font-label-caps text-label-caps group-hover:text-primary transition-colors">Facebook</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-low w-full">
+<div class="flex flex-col items-center gap-12 py-section-gap px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between w-full border-b border-outline-variant pb-12 gap-12">
+<div class="max-w-sm">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Bella Roma</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Autenticitate napoletană, pasiune italiană și ingrediente de cea mai înaltă calitate, direct la tine acasă.
+          </p>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">CONTACT & LOCAȚIE</h4>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm mt-1">location_on</span>
+                Strada Principala 6, Drăgioiu
+              </li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm mt-1">mail</span>
+                contact@bellaromapub.ro
+              </li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm mt-1">schedule</span>
+                Zilnic: 12:00 - 23:00
+              </li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">LINK-URI UTILE</h4>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Comandă Online</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Povestea Noastră</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Termeni și Condiții</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Politică de Confidențialitate</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between w-full items-center gap-4 text-on-surface-variant">
+<p class="font-body-md text-body-md">© 2024 Bella Roma. Artisanal Excellence.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">Facebook</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Simple scroll interaction for navigation
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('glass-effect', 'shadow-xl');
+        header.classList.remove('bg-background/80');
+      } else {
+        header.classList.remove('glass-effect', 'shadow-xl');
+        header.classList.add('bg-background/80');
+      }
+    });
+
+    // Interaction for bento grid images
+    const galleryItems = document.querySelectorAll('.group');
+    galleryItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.cursor = 'pointer';
+      });
+    });
+  </script>
+</body></html>
