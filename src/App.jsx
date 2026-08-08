@@ -3,7 +3,7 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Process from './pages/Process';
 import Contact from './pages/Contact';
-import MozzarellaCursor from './components/MozzarellaCursor';
+
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <MozzarellaCursor />
+
         <Navigation />
         <main>
           <Routes>
