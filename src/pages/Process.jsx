@@ -26,7 +26,7 @@ export default function Process() {
   return (
     <div className="process-page w-full">
       {/* Hero Section: The Soul of Pizza */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative h-[75vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -119,7 +119,7 @@ export default function Process() {
               className="w-full h-full object-cover"
               autoPlay muted loop playsInline
             >
-              <source src="/videos/pasul-3-creere-pizza.mp4" type="video/mp4" />
+              <source src="/videos/ingrediente-pizza.mp4" type="video/mp4" />
             </video>
           </motion.div>
           <motion.div
