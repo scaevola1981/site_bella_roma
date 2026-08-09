@@ -28,18 +28,18 @@ export default function Process() {
       {/* Hero Section: The Soul of Pizza */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            muted 
-            loop 
+          <video
+            autoPlay
+            muted
+            loop
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/videos/pasul-4-creere-pizza-video.mp4" type="video/mp4" />
+            <source src="/videos/pasul-1-creere-pizza-video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80 z-10"></div>
         </div>
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
@@ -51,14 +51,14 @@ export default function Process() {
             De la fermentarea lentă a aluatului până la căldura intensă a cuptorului cu lemne, fiecare pas este un omagiu adus meșteșugului autentic italian.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col md:flex-row justify-center gap-6">
-            <button 
+            <button
               onClick={() => document.getElementById('proces').scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps hover:scale-105 transition-transform uppercase tracking-widest"
             >
               Descoperă Procesul
             </button>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary/10 transition-colors text-center uppercase tracking-widest"
             >
               Rezervă O Masă
@@ -73,10 +73,10 @@ export default function Process() {
           <h2 className="font-headline-lg text-3xl md:text-headline-lg text-primary mb-4">Procesul Nostru Artizanal</h2>
           <div className="h-1 w-24 bg-primary mx-auto opacity-50"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           {/* Step 1: Dough */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container p-8 md:p-12 soft-gold-glow flex flex-col justify-center rounded-xl md:rounded-none"
           >
@@ -98,12 +98,12 @@ export default function Process() {
               </div>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[500px] rounded-xl md:rounded-none overflow-hidden"
           >
-            <video 
-              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" 
+            <video
+              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               autoPlay muted loop playsInline
             >
               <source src="/videos/pasul-1-creere-pizza.mp4" type="video/mp4" />
@@ -111,18 +111,18 @@ export default function Process() {
           </motion.div>
 
           {/* Step 2: Ingredients */}
-          <motion.div 
+          <motion.div
             variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[600px] order-last lg:order-none rounded-xl md:rounded-none overflow-hidden"
           >
-            <video 
-              className="w-full h-full object-cover" 
+            <video
+              className="w-full h-full object-cover"
               autoPlay muted loop playsInline
             >
               <source src="/videos/pasul-3-creere-pizza.mp4" type="video/mp4" />
             </video>
           </motion.div>
-          <motion.div 
+          <motion.div
             variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container-high p-8 md:p-12 flex flex-col justify-center rounded-xl md:rounded-none"
           >
@@ -156,12 +156,12 @@ export default function Process() {
           </motion.div>
 
           {/* Step 3: Baking */}
-          <motion.div 
+          <motion.div
             variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="col-span-1 md:col-span-12 relative h-[400px] md:h-[450px] overflow-hidden group rounded-xl md:rounded-none"
           >
-            <video 
-              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-[2000ms]" 
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-[2000ms]"
               autoPlay muted loop playsInline
             >
               <source src="/videos/pasul-4-creere-pizza-video.mp4" type="video/mp4" />
@@ -213,7 +213,7 @@ export default function Process() {
               </Link>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
             className="relative bg-surface p-8 md:p-12 border border-primary/20 flex flex-col items-center justify-center text-center"
           >
