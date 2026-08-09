@@ -6,10 +6,12 @@ import Contact from './pages/Contact';
 
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
 
         <Navigation />

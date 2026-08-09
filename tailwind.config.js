@@ -18,7 +18,7 @@ export default {
         "outline-variant": "#4d4635",
         "on-secondary-container": "#bfb7b3",
         "surface-container-highest": "#373432",
-        "primary": "#f2ca50",
+        "primary": "#c5a059",
         "on-primary-fixed-variant": "#574500",
         "inverse-on-surface": "#33302d",
         "primary-fixed-dim": "#e9c349",

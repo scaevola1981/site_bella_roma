@@ -1,5 +1,26 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+};
 
 export default function Process() {
   return (
@@ -12,19 +33,24 @@ export default function Process() {
             muted 
             loop 
             playsInline
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover"
           >
             <source src="/videos/HERO-video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80 z-10"></div>
         </div>
-        <div className="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl">
-          <span className="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.3em] uppercase">Tradiție și Măiestrie</span>
-          <h1 className="font-display-lg text-4xl md:text-display-lg text-on-surface mb-8">Arta Pizza Napoletane</h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl"
+        >
+          <motion.span variants={fadeInUp} className="font-label-caps text-label-caps text-primary mb-6 block tracking-[0.3em] uppercase">Tradiție și Măiestrie</motion.span>
+          <motion.h1 variants={fadeInUp} className="font-display-lg text-4xl md:text-display-lg text-on-surface mb-8">Arta Pizza Napoletane</motion.h1>
+          <motion.p variants={fadeInUp} className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
             De la fermentarea lentă a aluatului până la căldura intensă a cuptorului cu lemne, fiecare pas este un omagiu adus meșteșugului autentic italian.
-          </p>
-          <div className="flex flex-col md:flex-row justify-center gap-6">
+          </motion.p>
+          <motion.div variants={fadeInUp} className="flex flex-col md:flex-row justify-center gap-6">
             <button 
               onClick={() => document.getElementById('proces').scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps hover:scale-105 transition-transform uppercase tracking-widest"
@@ -37,8 +63,8 @@ export default function Process() {
             >
               Rezervă O Masă
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* The Process: Bento-inspired Step-by-Step */}
@@ -50,7 +76,10 @@ export default function Process() {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           {/* Step 1: Dough */}
-          <div className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container p-8 md:p-12 soft-gold-glow flex flex-col justify-center rounded-xl md:rounded-none">
+          <motion.div 
+            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container p-8 md:p-12 soft-gold-glow flex flex-col justify-center rounded-xl md:rounded-none"
+          >
             <div className="flex items-center gap-4 mb-6">
               <span className="text-5xl md:text-display-lg font-display-lg text-primary/20">01</span>
               <h3 className="font-headline-md text-2xl md:text-headline-md text-on-surface">Pregătirea Aluatului</h3>
@@ -68,26 +97,35 @@ export default function Process() {
                 <span className="font-headline-md text-[20px] text-on-surface">65% - 70%</span>
               </div>
             </div>
-          </div>
-          <div className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[500px] rounded-xl md:rounded-none overflow-hidden">
+          </motion.div>
+          <motion.div 
+            variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[500px] rounded-xl md:rounded-none overflow-hidden"
+          >
             <video 
               className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" 
               autoPlay muted loop playsInline
             >
               <source src="/videos/pasul-1-creere-pizza.mp4" type="video/mp4" />
             </video>
-          </div>
+          </motion.div>
 
           {/* Step 2: Ingredients */}
-          <div className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[600px] order-last lg:order-none rounded-xl md:rounded-none overflow-hidden">
+          <motion.div 
+            variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="col-span-1 md:col-span-12 lg:col-span-5 h-[300px] md:h-[600px] order-last lg:order-none rounded-xl md:rounded-none overflow-hidden"
+          >
             <video 
               className="w-full h-full object-cover" 
               autoPlay muted loop playsInline
             >
               <source src="/videos/pasul-3-creere-pizza.mp4" type="video/mp4" />
             </video>
-          </div>
-          <div className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container-high p-8 md:p-12 flex flex-col justify-center rounded-xl md:rounded-none">
+          </motion.div>
+          <motion.div 
+            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="col-span-1 md:col-span-12 lg:col-span-7 bg-surface-container-high p-8 md:p-12 flex flex-col justify-center rounded-xl md:rounded-none"
+          >
             <div className="flex items-center gap-4 mb-6 md:mb-10">
               <span className="text-5xl md:text-display-lg font-display-lg text-primary/20">02</span>
               <h3 className="font-headline-md text-2xl md:text-headline-md text-on-surface">Ingrediente Premium</h3>
@@ -115,10 +153,13 @@ export default function Process() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Step 3: Baking */}
-          <div className="col-span-1 md:col-span-12 relative h-[400px] md:h-[450px] overflow-hidden group rounded-xl md:rounded-none">
+          <motion.div 
+            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="col-span-1 md:col-span-12 relative h-[400px] md:h-[450px] overflow-hidden group rounded-xl md:rounded-none"
+          >
             <video 
               className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-[2000ms]" 
               autoPlay muted loop playsInline
@@ -134,14 +175,14 @@ export default function Process() {
                 <p className="text-on-surface mb-6 text-sm md:text-base">În cuptorul nostru tradițional cu lemne, pizza se coace în doar 60-90 de secunde. Această temperatură extremă creează faimoasa crustă "leopard", păstrând în același timp interiorul moale și hidratat.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Final Menu Tease */}
       <section className="py-16 md:py-section-gap bg-surface-container-lowest">
         <div className="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
-          <div>
+          <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
             <h2 className="font-headline-lg text-3xl md:text-headline-lg text-on-surface mb-8">Clasicii Noștri</h2>
             <ul className="space-y-6 md:space-y-8">
               <li className="flex flex-col">
@@ -171,8 +212,11 @@ export default function Process() {
                 Vezi Meniul Complet
               </Link>
             </div>
-          </div>
-          <div className="relative bg-surface p-8 md:p-12 border border-primary/20 flex flex-col items-center justify-center text-center">
+          </motion.div>
+          <motion.div 
+            variants={zoomIn} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+            className="relative bg-surface p-8 md:p-12 border border-primary/20 flex flex-col items-center justify-center text-center"
+          >
             <span className="material-symbols-outlined text-primary text-5xl md:text-6xl mb-4 md:mb-6">restaurant</span>
             <h3 className="font-headline-lg text-2xl md:text-headline-lg text-on-surface mb-4">Gustă Tradiția la Tine Acasă</h3>
             <p className="text-on-surface-variant mb-8 md:mb-10 text-sm md:text-base">Livrăm în tot orașul folosind ambalaje speciale care mențin temperatura și textura crustei artizanale.</p>
@@ -184,7 +228,7 @@ export default function Process() {
                 Rezervă Masă
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

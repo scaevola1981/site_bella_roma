@@ -13,8 +13,8 @@ export default function CookieBanner() {
     }
   }, []);
 
-  const acceptCookies = () => {
-    localStorage.setItem('bella_roma_cookie_consent', 'true');
+  const acceptCookies = (level) => {
+    localStorage.setItem('bella_roma_cookie_consent', level);
     setIsVisible(false);
   };
 
@@ -51,13 +51,22 @@ export default function CookieBanner() {
             <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--color-text)', lineHeight: '1.5' }}>
               Folosim cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Continuând să navigați, sunteți de acord cu utilizarea acestora.
             </p>
-            <button 
-              onClick={acceptCookies}
-              className="btn btn-primary"
-              style={{ whiteSpace: 'nowrap', padding: '10px 24px', fontSize: '0.9rem' }}
-            >
-              Am înțeles
-            </button>
+            <div className="flex gap-4 flex-col sm:flex-row">
+              <button 
+                onClick={() => acceptCookies('essential')}
+                className="border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-full"
+                style={{ whiteSpace: 'nowrap', padding: '10px 24px', fontSize: '0.9rem' }}
+              >
+                Doar Necesare
+              </button>
+              <button 
+                onClick={() => acceptCookies('all')}
+                className="bg-primary text-on-primary hover:bg-primary-container transition-colors rounded-full font-bold"
+                style={{ whiteSpace: 'nowrap', padding: '10px 24px', fontSize: '0.9rem' }}
+              >
+                Accept Toate
+              </button>
+            </div>
           </div>
         </motion.div>
       )}

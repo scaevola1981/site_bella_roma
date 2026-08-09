@@ -114,3 +114,12 @@ a:focus-visible, button:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-border);
 }
+
+/* Custom Glow Classes */
+.gold-glow {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15), inset 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.soft-gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+}
