@@ -50,7 +50,7 @@ export default function Home() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/videos/HERO-video.mp4" type="video/mp4" />
+              <source src="/videos/pasul-4-creere-pizza-video.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/80 z-10"></div>
           </div>
