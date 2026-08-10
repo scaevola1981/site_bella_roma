@@ -15,7 +15,7 @@ export default function Navigation() {
   }, []);
 
   const getLinkClasses = (linkPath) => {
-    const base = "font-label-caps text-label-caps transition-colors duration-300";
+    const base = "font-label-caps text-[15px] uppercase tracking-[0.1em] transition-colors duration-300";
     if (path === linkPath) {
       return `${base} text-primary font-bold border-b-2 border-primary pb-1`;
     }
@@ -45,7 +45,7 @@ export default function Navigation() {
         
         {/* Action / Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <Link to="/contact" className="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:opacity-80 transition-opacity uppercase tracking-widest">
+          <Link to="/contact" className="hidden md:block bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-[15px] hover:opacity-80 transition-opacity uppercase tracking-widest">
             Comandă
           </Link>
           <button 
@@ -63,7 +63,7 @@ export default function Navigation() {
           <Link to="/" onClick={() => setMobileMenuOpen(false)} className={getLinkClasses("/")}>Home</Link>
           <Link to="/poveste" onClick={() => setMobileMenuOpen(false)} className={getLinkClasses("/poveste")}>Povestea Noastră</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className={getLinkClasses("/contact")}>Contact</Link>
-          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps text-center uppercase tracking-widest">
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-[15px] text-center uppercase tracking-widest">
             Comandă Acum
           </Link>
         </div>

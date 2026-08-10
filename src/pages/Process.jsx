@@ -26,7 +26,7 @@ export default function Process() {
   return (
     <div className="process-page w-full">
       {/* Hero Section: The Soul of Pizza */}
-      <section className="relative h-[75vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -53,13 +53,13 @@ export default function Process() {
           <motion.div variants={fadeInUp} className="flex flex-col md:flex-row justify-center gap-6">
             <button
               onClick={() => document.getElementById('proces').scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary text-on-primary px-8 py-4 font-label-caps text-label-caps hover:scale-105 transition-transform uppercase tracking-widest"
+              className="bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform uppercase tracking-widest"
             >
               Descoperă Procesul
             </button>
             <Link
               to="/contact"
-              className="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary/10 transition-colors text-center uppercase tracking-widest"
+              className="border border-primary text-primary px-8 py-4 rounded-full font-label-caps text-label-caps hover:bg-primary/10 transition-colors text-center uppercase tracking-widest"
             >
               Rezervă O Masă
             </Link>
